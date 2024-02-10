@@ -1,0 +1,17 @@
+One important thing that we need to know is that if we have an object containing an method inside it and if we want to access the method we can directly do that in kotlin.
+
+example:
+
+object Apputils{
+    fun makechnages(){
+        // task to be done
+    }
+}
+
+//fun main(){
+   Apputils.makechnages() // we would be able to execute the method 
+}
+// Let us tak about kotlin and java interopratibility, in that scenerio we if we want to use the kotlin object to access the method in our java code we need to take the help
+// of instance keyword to access the method makechanges. Now what if we do not want to use that can we do something and the answer to it is by using the JVMStatic annotation that
+// would create an instance for the method that would be allowing us to access the method without using the instance keyword in java, making us to use an kotlin function
+// flexibiliy in java.
