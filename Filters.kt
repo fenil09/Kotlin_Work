@@ -19,7 +19,6 @@ println(lazylist.asSequence().filter { it[0] =='f' })
 println(lazylist.asSequence().filter { it[0]=='f' }.toList())
 
 
-
 val lazymap =decorations.asSequence().map { 
     println("access $it")
     it
@@ -37,6 +36,8 @@ val lazymap =decorations.asSequence().map {
 
  mappinganparticulatitem()
  applyinganlazyfilter()
+ val scorelist=listOf(88,99,97,105,23)
+ println(filterhigherscores(scorelist))
 
 }
 
@@ -78,4 +79,10 @@ fun applyinganlazyfilter(){
      println("first :${lazyfilter.first()}")
      println("-------------")
      println("ALL: ${lazyfilter.toList()}")
+}
+
+
+
+fun filterhigherscores(scorelist:List<Int>):List<Int>{
+    return scorelist.filter { it>=90 }
 }
