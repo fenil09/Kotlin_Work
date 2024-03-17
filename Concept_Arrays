@@ -1,0 +1,12 @@
+What is the difference between IntArray and Array<Int>
+
+
+-> This first one which is the IntArray is an primitive Integers array and there is no overhead for boxing which means that it does not require the extra memory
+and performance cost when been used inside the code and in the case of Array<Int> these contains elements which are wrap around the primitive Integer which creates the overhead
+as they are been boxed.
+
+-> The issue with using the Array<Int> is that as they are boxed elements and accessing them and using these elements would require some extra memory which can eventually
+affect the performance of the code.
+
+-> IntArray would be consisting of primitive integers value where as when an array is declared using Array<Int> would be having the objects or values which are been wraped around an primitive value which results in some extra memory consumption
+

@@ -1,4 +1,4 @@
-
+import java.util.*
 fun main(args: Array<String>) {
  
     val decorations= listOf("rock","pagoda","plant")
@@ -17,7 +17,6 @@ val lazylist = listOf("cricket","football","Faceball")
 println(lazylist.asSequence().filter { it[0] =='f' })
 // it would return an object not the elements
 println(lazylist.asSequence().filter { it[0]=='f' }.toList())
-
 
 val lazymap =decorations.asSequence().map { 
     println("access $it")
@@ -38,6 +37,12 @@ val lazymap =decorations.asSequence().map {
  applyinganlazyfilter()
  val scorelist=listOf(88,99,97,105,23)
  println(filterhigherscores(scorelist))
+
+ val arraylist=arrayOf(4,5,9,8,7,6,3,2)
+ println(Arrays.toString(filterevennumbers(arraylist)))
+ 
+ val names=arrayOf("fenil","dishnat","Avi","jashpal","Chetan","Wu")
+ println(Arrays.toString(filternnamesbylength(5, names)))
 
 }
 
@@ -86,3 +91,28 @@ fun applyinganlazyfilter(){
 fun filterhigherscores(scorelist:List<Int>):List<Int>{
     return scorelist.filter { it>=90 }
 }
+
+
+
+// Test question
+//You are given an array of integers called numbers. Write a Kotlin function called filterEvenNumbers that takes this array as input and returns a 
+//new array containing only the even numbers from the input array.
+
+
+fun filterevennumbers(numbers:Array<Int>):Array<Int>{
+    return numbers.filter { it%2==0 }.toTypedArray()
+}
+
+
+
+
+
+//You are given an array of strings representing names. Write a Kotlin function called filterNamesByLength that takes this array and a minimum 
+//length as input and returns a new array containing only the names with a length greater than or equal to the specified minimum length.
+
+fun filternnamesbylength(minlength:Int,stringarray:Array<String>):Array<String>{
+    return stringarray.filter { 
+        it.length>=minlength
+     }.toTypedArray()
+}
+
