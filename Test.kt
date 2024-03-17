@@ -12,6 +12,9 @@ fun main(args:Array<String>){
     println(filterTransactions("not imporant", listoftransaction))
     println(calculateamount(listoftransaction))
 
+    val booklist=listOf(Book("harry putar", "fenil", 1959, "fiction"),Book("game of thrones", "Fenil", 2021, "horror"))
+    println(filtermostrecentbook(booklist))
+
 
 }
 
@@ -31,4 +34,15 @@ fun filterTransactions(categoryname:String,transactionobject:List<Transactions>)
 
 fun calculateamount(transactionobject:List<Transactions>):Double{
     return transactionobject.sumOf { it.amout } 
+}
+
+//Next, write a function called findMostRecentBook that takes a list of Book objects as input and returns the most recent book based on the publication year.
+
+data class Book(val title: String, val author: String, val year: Int, val genre: String)
+
+
+
+fun filtermostrecentbook(books:List<Book>):String{
+    val recentbook=books.maxBy { it.year }
+    return recentbook.title
 }
